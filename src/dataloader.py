@@ -21,7 +21,7 @@ class DataLoader:
     """
 
     def __init__(self, dataset_name: str, save_path: str):
-     ‚   self.dataset_name = dataset_name
+        self.dataset_name = dataset_name
         self.save_path = save_path
 
     def load_and_preprocess(self):

@@ -73,7 +73,7 @@ Datensatz: "LINK_EINFÜGEN"
 
 Docker-Container starten für Entwicklung:
 ```sh
-docker run -it --name cross_modal_feature_env -v $(pwd):/code cross_modal_feature_env
+docker run -it --name cross_modal_feature_env --ipc host -v $(pwd):/code cross_modal_feature_env
 ```
 
 
