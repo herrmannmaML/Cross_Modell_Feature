@@ -4,6 +4,8 @@ from datasets import load_dataset, DatasetDict
 from sklearn.model_selection import train_test_split
 import numpy as np
 from PIL import Image
+from tqdm import tqdm
+import io
 
 # Logging-Config
 logging.basicConfig(filename='../project.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -44,9 +46,22 @@ class DataLoader:
         # Dataset splitten
         self.dataset = self.split_dataset()
         
+        # Bilder zu RGB und dann zu JPEG konvertieren
+        for split in self.dataset.keys():
+            for i in tqdm(range(len(self.dataset[split])), desc=f"Processing {split}-split"):
+                image = self._convert_png_to_jpeg(self.dataset[split][i]["image"]) 
+                image = image.convert("RGB")
+                self.dataset[split][i]["image"]= image             
+        
         # Das DatasetDict speichern
         self.dataset.save_to_disk(self.save_path)
         logging.info(f"Datensatz '{self.dataset_name}' unter '{self.save_path}' gespeichert!")
+    
+    def _convert_png_to_jpeg(self, image):
+        output = io.BytesIO()
+        image.save(output, format="JPEG")
+        output.seek(0)
+        return Image.open(output)
         
     def split_dataset(self):
         """
