@@ -1,0 +1,64 @@
+# Ordner ignorieren
+#------------------
+__pycache__/
+mlruns/*
+multirun/
+
+
+# Dateiformate
+#-------------
+*.pb
+*.png
+*.jpg
+*.json
+*.csv
+*.arrow
+*.xlsx
+*.docx
+*.pdf
+*parquet
+*.sav
+*.ftr
+*.gif
+*.html
+*.Rhistory
+*.RData
+*.shp
+*.gzip
+*.env
+
+# Modelle
+#--------
+*.pkl
+*.joblib
+*.h5
+*.bin
+*.safetensors
+*.pth
+*.tflite
+*.tflite.gz
+
+
+# Virtual Environment
+#--------------------
+.venv/*
+
+
+# pyenv
+#------
+.python-version
+
+
+# VSCode
+#-------
+.vscode/*
+
+
+# Mac/OSX
+#--------
+.DS_Store
+
+
+# Jupyter Notebook
+#-----------------
+.ipynb_checkpoints
