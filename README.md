@@ -63,7 +63,7 @@ Datensatz: "LINK_EINFÜGEN"
 
 3. Erstelle die lokale Projektumgebung
    ```sh
-   docker build -f env/Dockerfile -t master_docclass_env . 
+   docker build -f env/Dockerfile -t cross_modal_feature_env . 
    ```
 
 </br>
