@@ -8,6 +8,7 @@ multirun/
 # Dateiformate
 #-------------
 *.pb
+*.zip
 *.png
 *.jpg
 *.json
